@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ath_p4_proj2.Database;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace ath_p4_proj2
 {
@@ -23,6 +12,9 @@ namespace ath_p4_proj2
         public MainWindow()
         {
             InitializeComponent();
+            using var context = new InventoryDbContext();
+            bool wasCreated = context.Database.EnsureCreated();
+            if (wasCreated) SeedDb.Run();
         }
     }
 }
