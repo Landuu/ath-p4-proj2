@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace ath_p4_proj2.Models
 {
-    internal class Device
+    public class Device
     {
         public int DeviceId { get; set; }
         public string Manufacturer { get; set; }

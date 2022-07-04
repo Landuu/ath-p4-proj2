@@ -3,9 +3,39 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ath_p4_proj2.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Menedżer urządzeń" Height="450" Width="800">
+    <Window.DataContext>
+        <local:MainViewModel />
+    </Window.DataContext>
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Style="{StaticResource AppHeader}" Text="Ewidencja sprzetu komputerowego w firmie" Grid.Row="0"/>
+        <Separator VerticalAlignment="Top" Grid.Row="1"/>
+        <TextBlock Style="{StaticResource AppUser}" Text="{Binding UserString, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" />
+        <Separator VerticalAlignment="Bottom" Grid.Row="1"/>
+        <WrapPanel Grid.Row="2">
+            <WrapPanel.Resources>
+                <Style TargetType="Button" BasedOn="{StaticResource BaseButton}">
+                    <Setter Property="Margin" Value="10" />
+                </Style>
+            </WrapPanel.Resources>
+            <Button Content="Moje urządzenia" Command="{Binding OpenWindowCommand}"/>
+        </WrapPanel>
     </Grid>
 </Window>

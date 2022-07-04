@@ -1,6 +1,10 @@
 ﻿using ath_p4_proj2.Database;
+using ath_p4_proj2.Models;
+using ath_p4_proj2.ViewModels;
+using System.ComponentModel;
+using System.Linq;
 using System.Windows;
-
+using System.Windows.Controls;
 
 namespace ath_p4_proj2
 {
@@ -12,9 +16,12 @@ namespace ath_p4_proj2
         public MainWindow()
         {
             InitializeComponent();
+
             using var context = new InventoryDbContext();
             bool wasCreated = context.Database.EnsureCreated();
             if (wasCreated) SeedDb.Run();
+            var ctx = DataContext as MainViewModel;
+            ctx.User = context.Employees.Where(x => x.EmployeeId == 1).First();
         }
     }
 }

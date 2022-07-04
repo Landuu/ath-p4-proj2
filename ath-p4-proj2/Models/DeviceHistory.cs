@@ -3,7 +3,7 @@ using System;
 
 namespace ath_p4_proj2.Models
 {
-    internal class DeviceHistory
+    public class DeviceHistory
     {
         public int DeviceHistoryId { get; set; }
         public int DeviceId { get; set; }
