@@ -12,9 +12,9 @@ namespace ath_p4_proj2.ViewModels
     internal class MainViewModel : ObservableObject
     {
         private string _userString;
-        private Employee _user;
+        private Employee? _user;
 
-        public OpenWindowCommand OpenWindowCommand { get; set; } = new();
+        public OpenWindowCommand OpenWindowCommand { get; set; }
 
         public Employee User { 
             get { return _user; }
@@ -35,7 +35,8 @@ namespace ath_p4_proj2.ViewModels
 
         public MainViewModel()
         {
-            UserString = $"Zalogowany użytkownik: null";
+            _userString = $"Zalogowany użytkownik: null";
+            OpenWindowCommand = new(this);
         }
     }
 }

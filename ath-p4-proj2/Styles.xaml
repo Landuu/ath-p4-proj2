@@ -2,10 +2,10 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     
     <Style x:Key="BaseButton" TargetType="Button">
-        <Setter Property="Padding" Value="20 6" />
+        <Setter Property="Padding" Value="25 10" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="FontWeight" Value="Light" />
-        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontSize" Value="16" />
     </Style>
 
     <Style TargetType="Button" BasedOn="{StaticResource BaseButton}" /> 
@@ -30,5 +30,14 @@
                 <Setter Property="Padding" Value="5" />
             </Style>
         </Style.Resources>
+    </Style>
+
+    <Style x:Key="FormHeader" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontWeight" Value="Light" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="Padding" Value="20 20"/>
     </Style>
 </ResourceDictionary>

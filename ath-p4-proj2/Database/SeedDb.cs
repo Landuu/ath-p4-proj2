@@ -95,6 +95,32 @@ namespace ath_p4_proj2.Database
                 device.DateOfReturn = faker.Date.Future(1, device.DateOfAssignment);
             }
 
+            // Add devices for first employee for demo purposes
+            var demoDevices = new List<Device>();
+            for (int i = 0; i < 2; i++)
+            {
+                var ma = GetDeviceManufaturer();
+                var mo = GetDeviceModel();
+                var sn = GetDeviceSerialNumber();
+                var dos = faker.Date.Past(1, new DateTime(2021, 1, 1));
+                var d = new Device(ma, mo, sn, dos);
+                demoDevices.Add(d);
+            }
+            var demoHistories = new List<DeviceHistory>();
+            for(int i = 0; i < 2; i++)
+            {
+                var d = demoDevices[i];
+                var e = employees[0];
+                var h = new DeviceHistory();
+                h.Device = d;
+                h.Employee = e;
+                h.DateOfAssignment = faker.Date.Future(1, d.DateOfService);
+                histories.Add(h);
+            }
+
+            devices.AddRange(demoDevices);
+            histories.AddRange(demoHistories);
+
             var db = new InventoryDbContext();
             db.Employees.AddRange(employees);
             db.Devices.AddRange(devices);
