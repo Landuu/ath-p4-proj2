@@ -28,7 +28,7 @@ namespace ath_p4_proj2.Models
         public bool IsOnePopulated =>
             IsOnePopulatedWithoutId
             || DeviceId != 0;
-        public bool IsPopulated => 
+        public bool IsPopulated =>
             IsPopulatedWithoutId
             && DeviceId != 0;
         public bool IsOnePopulatedSearch =>
@@ -37,7 +37,8 @@ namespace ath_p4_proj2.Models
             || !string.IsNullOrEmpty(Model)
             || !string.IsNullOrEmpty(SerialNumber);
 
-        public Device() {
+        public Device()
+        {
             History = new List<DeviceHistory>();
         }
 

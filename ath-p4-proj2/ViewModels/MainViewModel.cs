@@ -1,11 +1,5 @@
 ﻿using ath_p4_proj2.Commands;
 using ath_p4_proj2.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ath_p4_proj2.ViewModels
 {
@@ -16,9 +10,11 @@ namespace ath_p4_proj2.ViewModels
 
         public OpenWindowCommand OpenWindowCommand { get; set; }
 
-        public Employee User { 
+        public Employee User
+        {
             get { return _user; }
-            set { 
+            set
+            {
                 _user = value;
                 UserString = $"Zalogowany użytkownik: {User.FirstName} {User.LastName}";
             }
@@ -27,7 +23,8 @@ namespace ath_p4_proj2.ViewModels
         public string UserString
         {
             get { return _userString; }
-            private set {
+            private set
+            {
                 _userString = value;
                 OnPropertyChanged();
             }

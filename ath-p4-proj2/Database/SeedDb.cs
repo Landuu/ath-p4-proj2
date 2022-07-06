@@ -1,11 +1,8 @@
-﻿using System;
+﻿using ath_p4_proj2.Models;
+using Bogus;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ath_p4_proj2;
-using ath_p4_proj2.Models;
-using Bogus;
 using static Bogus.DataSets.Name;
 
 namespace ath_p4_proj2.Database
@@ -107,7 +104,7 @@ namespace ath_p4_proj2.Database
                 demoDevices.Add(d);
             }
             var demoHistories = new List<DeviceHistory>();
-            for(int i = 0; i < 2; i++)
+            for (int i = 0; i < 2; i++)
             {
                 var d = demoDevices[i];
                 var e = employees[0];

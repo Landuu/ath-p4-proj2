@@ -1,13 +1,9 @@
 ﻿using ath_p4_proj2.Commands;
-using ath_p4_proj2.Database;
 using ath_p4_proj2.Models;
 using ath_p4_proj2.Windows;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ath_p4_proj2.ViewModels
 {
@@ -16,9 +12,11 @@ namespace ath_p4_proj2.ViewModels
         public ReportMalfunctionWindow window;
 
         private int _employeeId;
-        public int EmployeeId {
+        public int EmployeeId
+        {
             get { return _employeeId; }
-            set {
+            set
+            {
                 _employeeId = value;
                 OnPropertyChanged();
             }
@@ -28,7 +26,8 @@ namespace ath_p4_proj2.ViewModels
         public List<DisplayableDevice> Devices
         {
             get { return _devices; }
-            set {
+            set
+            {
                 _devices = value;
                 OnPropertyChanged();
             }
@@ -49,7 +48,8 @@ namespace ath_p4_proj2.ViewModels
         public string Description
         {
             get { return _description; }
-            set {
+            set
+            {
                 _description = value;
                 OnPropertyChanged();
             }
@@ -65,10 +65,11 @@ namespace ath_p4_proj2.ViewModels
             set { OnPropertyChanged(); }
         }
 
-        public string this[string columnName] {
+        public string this[string columnName]
+        {
             get
             {
-                switch(columnName)
+                switch (columnName)
                 {
                     case "SelectedDevice":
                         _errorContainer -= EContainer.EIndex.DeviceNull;
@@ -80,7 +81,7 @@ namespace ath_p4_proj2.ViewModels
                         _errorContainer -= EContainer.EIndex.DescriptionTooShort;
 
                         if (string.IsNullOrEmpty(Description))
-                            _errorContainer += EContainer.EIndex.DescriptionEmpty;       
+                            _errorContainer += EContainer.EIndex.DescriptionEmpty;
                         if (Description is not null && Description.Length < 10)
                             _errorContainer += EContainer.EIndex.DescriptionTooShort;
                         break;
@@ -134,7 +135,7 @@ namespace ath_p4_proj2.ViewModels
                 {
                     if (!Errors[i]) continue;
                     s += Messages[(EIndex)i] + ", \n";
-                    
+
                 }
                 return s;
             }

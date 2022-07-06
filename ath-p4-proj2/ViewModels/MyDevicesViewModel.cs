@@ -9,9 +9,11 @@ namespace ath_p4_proj2.ViewModels
     {
         private List<DisplayableDevice> _devices;
 
-        public List<DisplayableDevice> Devices {
+        public List<DisplayableDevice> Devices
+        {
             get { return _devices; }
-            set { 
+            set
+            {
                 _devices = value;
                 OnPropertyChanged();
             }

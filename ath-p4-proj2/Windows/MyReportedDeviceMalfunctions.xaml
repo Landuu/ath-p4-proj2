@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ath_p4_proj2.Windows"
         xmlns:localvm="clr-namespace:ath_p4_proj2.ViewModels"
         mc:Ignorable="d"
-        Title="Zgłoszone awarie" Height="450" Width="800">
+        Title="Zgłoszone awarie urządzeń" Height="450" Width="800">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -19,13 +19,11 @@
     </Window.DataContext>
 
     <Grid>
-        <DataGrid ItemsSource="{Binding Malfunctions}">
-            <DataGrid.Resources>
-                <Style TargetType="DataGridCell">
-                    <Setter Property="Padding" Value="20" />
-                </Style>
-            </DataGrid.Resources>
-        </DataGrid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Style="{StaticResource AppHeader}" Text="Zgłoszone awarie urządzeń" Grid.Row="0" />
+        <DataGrid ItemsSource="{Binding Malfunctions}" Grid.Row="1" />
     </Grid>
 </Window>

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ath_p4_proj2.Windows"
         xmlns:localvm="clr-namespace:ath_p4_proj2.ViewModels"
         mc:Ignorable="d"
-        Title="Lista dostępnych urządzeń" Height="450" Width="800">
+        Title="Lista urządzeń dostepnych do wydania" Height="450" Width="800">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -17,15 +17,14 @@
     <Window.DataContext>
         <localvm:AvailableDevicesViewModel />
     </Window.DataContext>
-    
-    <Grid>
-        <DataGrid ItemsSource="{Binding Devices}">
-            <DataGrid.Resources>
-                <Style TargetType="DataGridCell">
-                    <Setter Property="Padding" Value="20" />
-                </Style>
-            </DataGrid.Resources>
-        </DataGrid>
 
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock Style="{StaticResource AppHeader}" Text="Lista urządzeń dostępnych do wydania" Grid.Row="0"/>
+        <DataGrid ItemsSource="{Binding Devices}" Grid.Row="1"/>
     </Grid>
 </Window>

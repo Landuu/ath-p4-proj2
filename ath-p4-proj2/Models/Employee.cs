@@ -14,7 +14,7 @@
             || !string.IsNullOrEmpty(PhoneNumber)
             || !string.IsNullOrEmpty(Email);
 
-        public bool IsPopulatedWithoutId => 
+        public bool IsPopulatedWithoutId =>
             !string.IsNullOrEmpty(FirstName)
             && !string.IsNullOrEmpty(LastName)
             && !string.IsNullOrEmpty(PhoneNumber)

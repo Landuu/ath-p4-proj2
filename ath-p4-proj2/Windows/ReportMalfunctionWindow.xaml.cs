@@ -1,7 +1,6 @@
 ﻿using ath_p4_proj2.Database;
 using ath_p4_proj2.Models;
 using ath_p4_proj2.ViewModels;
-using System.Diagnostics;
 using System.Linq;
 using System.Windows;
 

@@ -1,12 +1,7 @@
 ﻿using ath_p4_proj2.Database;
 using ath_p4_proj2.Models;
 using ath_p4_proj2.ViewModels;
-using ath_p4_proj2.Windows;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Diagnostics;
-using System.Globalization;
 using System.Windows.Input;
 
 namespace ath_p4_proj2.Commands
@@ -24,9 +19,9 @@ namespace ath_p4_proj2.Commands
 
         public bool CanExecute(object? parameter)
         {
-/*            if (string.IsNullOrEmpty(_context.Description)) return false;
-            if (_context.DeviceId == 0) return false;
-            if (_context.EmployeeId == 0) return false;*/
+            /*            if (string.IsNullOrEmpty(_context.Description)) return false;
+                        if (_context.DeviceId == 0) return false;
+                        if (_context.EmployeeId == 0) return false;*/
             return true;
         }
 

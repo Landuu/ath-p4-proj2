@@ -8,9 +8,11 @@ namespace ath_p4_proj2.ViewModels
     {
         private List<DeviceMalfunction> _malfunctions;
 
-        public List<DeviceMalfunction> Malfunctions {
+        public List<DeviceMalfunction> Malfunctions
+        {
             get { return _malfunctions; }
-            set {
+            set
+            {
                 _malfunctions = value;
                 OnPropertyChanged();
             }

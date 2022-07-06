@@ -24,14 +24,6 @@
         <Setter Property="Padding" Value="10" />
     </Style>
 
-    <Style TargetType="DataGrid">
-        <Style.Resources>
-            <Style TargetType="DataGridCell">
-                <Setter Property="Padding" Value="5" />
-            </Style>
-        </Style.Resources>
-    </Style>
-
     <Style x:Key="FormHeader" TargetType="TextBlock">
         <Setter Property="FontSize" Value="18" />
         <Setter Property="FontWeight" Value="Light" />
@@ -39,5 +31,19 @@
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="TextWrapping" Value="Wrap" />
         <Setter Property="Padding" Value="20 20"/>
+    </Style>
+
+    <Style TargetType="DataGrid">
+        <Setter Property="FontSize" Value="15" />
+    </Style>
+
+    <Style TargetType="DataGridColumnHeader">
+        <Setter Property="FontWeight" Value="Medium" />
+        <Setter Property="Padding" Value="10 5" />
+    </Style>
+
+    <Style x:Key="MenuLabel" TargetType="Label">
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="FontWeight" Value="Light" />
     </Style>
 </ResourceDictionary>
